@@ -1,0 +1,34 @@
+{
+  "name": "qnx-pulsestudio",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "QNX PulseStudio — Host-Based Real-Time Kernel Trace, IPC Latency, Priority Inversion & APS Analyzer for QNX Neutrino RTOS 8.0",
+  "bin": {
+    "qnx-pulse": "./dist/cli/cli.js"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build:ui": "vite build",
+    "build:cli": "esbuild src/cli/cli.ts --bundle --platform=node --format=esm --target=node22 --outfile=dist/cli/cli.js",
+    "build": "npm run build:ui && npm run build:cli",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "preview": "vite preview --port 5175 --strictPort"
+  },
+  "dependencies": {
+    "lucide-react": "^0.511.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "esbuild": "^0.25.4",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.1.3"
+  }
+}
